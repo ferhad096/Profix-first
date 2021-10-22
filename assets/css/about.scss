@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+::selection{
+    background-color: #35354A;
+    color: #FFF;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    text-decoration: none !important;
+}
+ul{
+    list-style-type: none !important;
+}
+
+h2{
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.pad-box{
+    padding: 60px 0 0 20px;
+}
+
+
+
+@import "_header.scss";
+@import "_footer.scss";
+
+
+
+#aboutUs{
+    position: relative;
+    padding: 80px 0 60px;
+    background: url(/assets/images/service/harddrive.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #FFF;
+    .overlay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(bottom, rgba(53,53,74,0.5) 0%, rgba(53,53,74,0.7) 75%, rgba(53,53,74,0.9) 100%);
+    }
+    .title{
+        position: relative;
+    }
+    .section-footer{
+        position: absolute;
+        bottom: 0;
+        a{
+            color: #FFF;
+            font-size: 12px;
+            font-weight: bold;
+            transition: .3s ease-in-out;
+            &:hover{
+                color: #29ABE2;
+            }
+        }
+        i{
+            font-size: 12px;
+            padding: 0 10px;
+            color: #29ABE2;
+        }
+    }
+}
+
+#whatWeDo{
+    padding: 80px 0 60px;
+    background-color: #F7F7F7;
+    text-align: center;
+    h2{
+        color: #35354A;
+        margin-bottom: 20px;
+    }
+    p{
+        margin-bottom: 20px;
+        color: #666;
+        font-size: 14px;
+    }
+    span{
+        display: block;
+        text-align: right !important;
+        border-right: 4px solid #29ABE2;
+        margin: 30px 0;
+        p{
+            color: #666;
+            font-size: 24px;
+            padding-right: 15px;
+        }
+    }
+    img{
+        width: 100%;
+    }
+}
+
+#ourTeam{
+    padding: 80px 20px 60px 0;
+    .title{
+        text-align: center;
+        h3{
+            font-size: 24px;
+            color: #35354A;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        p{
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        a{
+            display: inline-block;
+            font-size: 13px;
+            color: #FFF;
+            background-color: #29ABE2;
+            padding: 0 35px;
+            height: 46px;
+            line-height: 46px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: .3s ease-in-out;
+            &:hover{
+                background-color: #35354A;
+                color: #FFF;
+            }
+        }
+    }
+    .img{
+        img{
+            width: 100%;
+        }
+    }
+    .info{
+        background-color: #F7F7F7;
+        padding: 20px;
+        text-align: center;
+        h5{
+            font-size: 18px;
+            color: #35354A;
+        }
+        p{
+            font-size: 14px;
+            color: #666;
+        }
+        i{
+            color: #35354A;
+            padding-left: 10px;
+            transition: .3s ease-in-out;
+            &:hover{
+                color: #29ABE2;
+            }
+        }
+    }
+}
+
+#contact{
+    background: #29ABE2;
+    padding: 30px 0;
+    text-align: center ;
+    .icon{
+        display: none;
+        i{
+            font-size: 60px;
+            color: #FFF;
+        }
+    }
+    .title{
+        padding: 15px 0;
+        h2{
+            font-size: 24px;
+            color: #FFF;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        p{
+            font-size: 14px;
+            color: #FFF;
+            margin: 0;
+        }
+    }
+    .button{
+        a{
+            display: inline-block;
+            font-size: 13px;
+            color: #29ABE2;
+            background-color: #FFF;
+            padding: 0 35px;
+            height: 46px;
+            line-height: 46px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: .3s ease-in-out;
+            &:hover{
+                background-color: #35354A;
+                color: #FFF;
+            }
+        }
+    }
+
+}
+
+#map{
+    overflow: hidden;
+    position: relative;
+    iframe{
+        vertical-align: middle;
+    }
+    .box{
+        padding: 50px 20px 20px;
+        background-color: #29ABE2;
+        h2{
+            font-weight: bold;
+            color: #FFF;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        p{
+            i{
+                padding-right: 10px;
+            }
+            color: #FFF;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .hours{
+            margin-top: 30px;
+            span{
+                float: right;
+            }
+        }
+    }
+}
+
+
+@media(min-width:768px){
+    #aboutUs{
+        padding: 100px 0 80px;
+    }
+    #whatWeDo{
+        padding: 100px 0 80px;  
+    }
+    #contact{
+        text-align: start;
+        .icon{
+            display: block;
+        }
+        .button{
+            text-align: end;
+        }
+    }
+    #map{
+        .box{
+            .hours{
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media(min-width:992px){
+    #whatWeDo{
+        text-align: left;
+    }
+    #ourTeam{
+        text-align: left;
+    }
+    #map{
+        .box{
+            position: absolute;
+            bottom: 13px;
+            right: 10%;
+            width: 370px;
+            .hours{
+                margin-top: 50px;
+            }
+        }
+    }
+}
