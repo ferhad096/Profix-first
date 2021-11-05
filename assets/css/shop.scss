@@ -24,6 +24,9 @@ h2{
     font-size: 34px;
     font-weight: bold;
 }
+img{
+    max-width: 100%;
+}
 
 .pad-box{
     padding: 60px 0 0 20px;
@@ -33,12 +36,45 @@ h2{
     padding: 20px 0 0 20px
 }
 
+body{
+    color: #35354A
+}
+
+.bg-muted{
+    background: #F7F7F7
+}
 
 
 @import "_header.scss";
 @import "_footer.scss";
 
+.item-lables{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
 
+.item-label{
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 13px;
+    color: #FFF;
+    display: inline-block;
+    border-radius: 3px;
+    line-height: 1.2;
+}
+.item-label-sale{
+    background-color: #ED1B23;
+}
+.item-label-trending{
+    background-color: #29ABE2;
+}
+.item-label-top-seller{
+    background-color: #35354A;
+}
+.item-label-new{
+    background-color: #49CD20;
+}
 
 #shop{
     position: relative;
@@ -111,32 +147,6 @@ h2{
                     border: 1px solid #fff;
                     box-shadow: 0 5px 20px rgba(0,0,0,.35);
                 }
-                .item-lables{
-                    position: absolute;
-                    left: 20px;
-                    top: 20px;
-                    .item-label{
-                        margin: 5px;
-                        padding: 5px 10px;
-                        font-size: 13px;
-                        color: #FFF;
-                        display: inline-block;
-                        border-radius: 3px;
-                        line-height: 1.2;
-                    }
-                    .item-label-sale{
-                        background-color: #ED1B23;
-                    }
-                    .item-label-trending{
-                        background-color: #29ABE2;
-                    }
-                    .item-label-top-seller{
-                        background-color: #35354A;
-                    }
-                    .item-label-new{
-                        background-color: #49CD20;
-                    }
-                }
                 .image{
                     img{
                         width: 100%;
@@ -166,9 +176,17 @@ h2{
                         }
                     }
                     .item-price{
+                        text-align: end;
                         h3{
                             font-size: 18px;
                             font-weight: bold;
+                        }
+                        .old-price{
+                            color: #999;
+                            font-size: 14px;
+                            font-weight: 700;
+                            font-family: 'Montserrat' , sans-serif;
+                            text-decoration: line-through;
                         }
                     }
                 }
@@ -253,7 +271,7 @@ h2{
         .title{
             font-size: 18px;
             color: #35354A;
-            font-weight: bold;
+            font-weight: 600;
             margin: 16px 0 20px;
         }
         .category{
@@ -388,12 +406,215 @@ h2{
                         border-width: 4px;
                         box-shadow: 0 1px 5px #333, 0 1px 2px #666 inset;;
                     }
+                    .ui-state-focus{
+                        outline: none;
+                        border: 4px solid #29ABE2;
+                        box-shadow: 0 1px 5px #333, 0 1px 2px #666 inset;
+                    }
                 }
                 .price{
                     margin-top: 10px;
                     font-size: 13px;
-                    .amount{
-                        font-family: 'Montserrat' , sans-serif;
+                    text-align: end;
+                    font-family: 'Montserrat' , sans-serif;
+                    input{
+                        outline: none;
+                        width: 70px;
+                        color: #35354A;
+                        border: none;
+                    }
+
+                }
+            }
+            .manufacturer{
+                p{
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+                ul{
+                    li{
+                        font-size: 13px;
+                        text-transform: uppercase;
+                        a{
+                            color: #35354A;
+                            transition: .3s ease-in-out;
+                            font-family: 'Montserrat' , sans-serif;
+                            font-weight: 500;
+                            &:hover{
+                                color: #29ABE2;
+                            }
+                            span{
+                                color: #999;
+                                font-family: 'Montserrat' , sans-serif;
+                            }
+                        }
+                        
+                    }
+                    li+li{
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        .top-rated{
+            .items{
+                .top-rated-item{
+                    .image{
+                        margin-right: 20px;
+                        img{
+                            width: 80px;
+                        }
+                    }
+                    .item-side{
+                        .item-title{
+                            align-items: center;
+                            display: flex;
+                            margin-bottom: 5px;
+                            h4{
+                                margin: 0;
+                                color: #35354A;
+                                font-size: 14px;
+                                font-weight: 600;
+                                transition: .3s ease-in-out;
+                                &:hover{
+                                    color: #29ABE2;
+                                }
+                            }
+                        }
+                        p{
+                            font-size: 12px;
+                            color: #999;
+                            margin-bottom: 10px;
+                            transition: .3s ease-in-out;
+                            &:hover{
+                                color: #29ABE2;
+                            }
+                        }
+                        h5{
+                            font-size: 14px;
+                            font-weight: 700;
+                            margin: 0;
+                            .old-price{
+                                color: #999;
+                                font-size: 14px;
+                                font-weight: 700;
+                                font-family: 'Montserrat' , sans-serif;
+                                text-decoration: line-through;
+                            }
+                        }
+                    }
+                }
+                .top-rated-item+.top-rated-item{
+                    margin-top: 20px;
+                }
+            }
+        }
+        .contact-us{
+            .bg-muted{
+                padding: 20px;
+            }
+            p{
+                font-size: 14px;
+                color: #666;
+                margin-bottom: 20px;
+            }
+            .link{
+                text-align: end;
+                .btn-blue{
+                    display: inline-block;
+                    font-size: 13px;
+                    color: #FFF;
+                    background-color: #29ABE2;
+                    border: 2px solid #29ABE2;
+                    padding: 0 25px;
+                    height: 38px;
+                    line-height: 38px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    transition: .3s ease-in-out;
+                    &:hover{
+                        background-color: #35354A;
+                        border: 2px solid #35354A;
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+        .featured{
+            .box{
+                position: relative;
+                transition: .3s ease-in-out;
+                .image{
+                    img{
+                        width: 100%;
+                    }
+                }
+                .box-title{
+                    margin: 20px 0;
+                    .item-title{
+                        .item-name{
+                            font-family: 'Montserrat' , sans-serif;
+                            display: block;
+                            color: #35354A;
+                            font-size: 14px;
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                            transition: .3s ease-in-out;
+                            &:hover{
+                                color: #29ABE2;
+                            }
+                        }
+                        .category{
+                            font-family: 'Montserrat' , sans-serif;
+                            color: #999;
+                            font-size: 14px;
+                            transition: .3s ease-in-out;
+                            &:hover{
+                                color: #29ABE2;
+                            }
+                        }
+                    }
+                    .item-price{
+                        text-align: end;
+                        h3{
+                            font-size: 18px;
+                            font-weight: bold;
+                        }
+                        .old-price{
+                            color: #999;
+                            font-size: 14px;
+                            font-weight: 700;
+                            font-family: 'Montserrat' , sans-serif;
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+                .description{
+                    margin-top: 20px;
+                    p{
+                        font-size: 14px;
+                        color: #666;
+                    }
+                }
+                .links{
+                    text-align: end;
+                    .btn-blue{
+                        display: inline-block;
+                        font-size: 13px;
+                        color: #FFF;
+                        background-color: #29ABE2;
+                        border: 2px solid #29ABE2;
+                        padding: 0 15px;
+                        height: 38px;
+                        line-height: 38px;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        transition: .3s ease-in-out;
+                        &:hover{
+                            background-color: #35354A;
+                            border: 2px solid #35354A;
+                            color: #FFF;
+                        }
                     }
                 }
             }

@@ -5,11 +5,13 @@
     font-family: 'Raleway', sans-serif;
 }
 
+
 ::selection{
     background-color: #35354A;
     color: #FFF;
 }
 h1,h2,h3,h4,h5,h6{
+    font-weight: 600;
     font-family: 'Montserrat', sans-serif;
 }
 a{
@@ -23,16 +25,25 @@ h2{
     font-size: 34px;
     font-weight: bold;
 }
+img{
+    max-width: 100%;
+}
 
 .pad-box{
     padding: 60px 0 0 20px;
 }
 
 .padding{
-    padding-left: 20px;
-    padding-top: 20px;
+    padding: 20px 0 0 20px
 }
 
+body{
+    color: #35354A
+}
+
+.bg-muted{
+    background: #F7F7F7
+}
 
 
 @import "_header.scss";
@@ -40,8 +51,7 @@ h2{
 
 
 
-
-#services{
+#projects{
     position: relative;
     padding: 80px 0 60px;
     background: url(/assets/images/service/motherboard-4.jpg);
@@ -82,6 +92,7 @@ h2{
 }
 
 
+
 #content-section{
     padding: 80px 0 60px;
     .categories{
@@ -103,103 +114,110 @@ h2{
         }
     }
     .box{
+        position: relative;
+        overflow: hidden;
+        &::before{
+            position: absolute;
+            content: '';
+            height: 2px;
+            top: 20px;
+            left: 0;
+            right: 100%;
+            background: #29ABE2;
+            z-index: 2;
+            transition: .3s ease-in-out;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            width: 2px;
+            top: 0;
+            bottom: 100%;
+            left: 20px;
+            background: #29ABE2;
+            z-index: 2;
+            transition: .3s ease-in-out;
+        }
+        .overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #000;
+            opacity: 0;
+            z-index: 1;
+            transition: .3s ease-in-out;
+        }
         .image{
-            overflow: hidden;
             position: relative;
-            a{
-                &::before{
-                    content: '\f002';
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    color: #FFF;
-                    font-size: 64px;
-                    font-family: "Font Awesome 5 Free";
-                    font-weight: 900;
-                    transform: translate(-50%,-50%);
-                    z-index: 66;
-                    transition: .3s ease-in-out;
-                    opacity: 0;
-                }
-            }
-            .overlay{
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                background: #000;
-                opacity: 0;
-                z-index: 1;
-                transition: .3s ease-in-out;
-            }
-            &:hover{
-                a{
-                    &::before{
-                        font-size: 32px;
-                        opacity: 1;
-                    }
-                }
-                .overlay{
-                    opacity: 0.5;
-                }
-                img{
-                    transform: scale(1.2);
-                }
-            }
             img{
                 width: 100%;
                 transition: .3s ease-in-out;
             }
-
-        }
-        .content{
-            overflow: hidden;
-            background-color: #F7F7F7;
-            padding: 40px 20px 20px;
-            a{
+            .image-title{
+                transition: .3s ease-in-out;
+                opacity: 0;
+                position: absolute;
+                top: 40px;
+                left: 40px;
+                z-index: 2;
                 h3{
-                    font-size: 16px;
-                    color: #29ABE2;
-                    margin-bottom: 15px;
-                    font-weight: bold;
-                    transition: .3s ease-in-out;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
+                    font-size: 18px;
+                    color: #FFF;
+                    margin-bottom: 5px;
                 }
-                &:hover{
-                    h3{
-                        color: #35354A;
-                    }
+                p{
+                    font-size: 14px;
+                    color: #FFF;
                 }
                 
             }
-            p{
-                font-size: 14px;
-                margin-bottom: 30px;
-                color: #666;
-            }
-            .btn-blue{
-                float: right;
-                font-size: 13px;
-                line-height: 38px;
-                height: 38px;
-                padding: 0 25px;
-                text-transform: uppercase;
-                color: #29ABE2;
-                border: 2px solid #29ABE2;
-                border-radius: 0;
-                font-weight: bold;
+            .link{
                 transition: .3s ease-in-out;
-                &:hover{
-                    border-color: #35354A;
-                    color: #35354A;
+                opacity: 0;
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                z-index: 2;
+                a{
+                    font-weight: 700;
+                    font-size: 18px;
+                    color: #29ABE2;
+                    transition: .3s ease-in-out;
+                    &:hover{
+                        text-decoration: underline !important;
+                    }
+                }
+            }
+        }
+        &:hover{
+            &::before{
+                left: 10px;
+                right: 20px;
+            }
+            &::after{
+                top: 10px;
+                bottom: 20px;
+            }
+            .overlay{
+                opacity: 0.5;
+            }
+            .image{
+                img{
+                    transform: scale(1.2);
+                }
+                .image-title{
+                    opacity: 1;
+                }
+                .link{
+                    opacity: 1;
                 }
             }
         }
     }
 }
+
 
 
 #form{
@@ -267,9 +285,8 @@ h2{
 
 
 
-
 @media(min-width:768px){
-    #services{
+    #projects{
         padding: 100px 0 80px;
     }
     #content-section{

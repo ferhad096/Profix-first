@@ -108,7 +108,7 @@ header .menu .right .menu-items .main-li .main-a {
   padding: 25px 0;
   color: #35354A;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 500;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -177,7 +177,7 @@ header .menu .right .menu-items .main-li .dropdown .content a {
   color: #666;
   line-height: 30px;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 header .menu .right .menu-items .main-li .dropdown .content a:hover {
@@ -349,7 +349,7 @@ footer .copyright p span {
 }
 
 #content-section .categories a {
-  font-weight: bold;
+  font-weight: 600;
   display: inline-block;
   color: #29ABE2;
   font-size: 14px;
